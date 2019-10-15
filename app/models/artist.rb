@@ -1,11 +1,3 @@
-module ArtistsHelper
-  def display_artist(song)
-    artist = song.artist
-
-    if !artist.nil?
-      link_to artist.name, artist_path(artist)
-    else
-      link_to 'Add Artist', edit_song_path(song)
-    end
-  end
-end	end
+class Artist < ActiveRecord::Base
+  has_many :songs
+end
